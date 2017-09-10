@@ -16,12 +16,24 @@ class AppleMusicTabBarController: UITabBarController {
         
         return expandingView
     }()
+    var expandingViewTapGestureRecognizer: UITapGestureRecognizer!
+    
+    let expandingViewHeight: CGFloat = 50.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.addSubview(expandingView)
         
+        expandingView.backgroundColor = UIColor.black
+        
+        expandingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: expandingView.trailingAnchor).isActive = true
+        expandingView.heightAnchor.constraint(equalToConstant: expandingViewHeight).isActive = true
+        expandingView.bottomAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
+        
+        expandingViewTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleExpandingViewTap(gestureRecognizer:)))
         
     }
 
@@ -30,6 +42,17 @@ class AppleMusicTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    func showExpandingView() {
+        
+    }
+    
+    func hideExpandingView() {
+        
+    }
+    
+    func handleExpandingViewTap(gestureRecognizer: UITapGestureRecognizer) {
+        
+    }
 
     /*
     // MARK: - Navigation
