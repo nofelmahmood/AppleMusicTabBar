@@ -12,6 +12,7 @@
 		3E68AF701F6547420051684E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E68AF6E1F6547420051684E /* Main.storyboard */; };
 		3E68AF721F6547420051684E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E68AF711F6547420051684E /* Assets.xcassets */; };
 		3E68AF751F6547420051684E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E68AF731F6547420051684E /* LaunchScreen.storyboard */; };
+		3E68AF7D1F6547610051684E /* AppleMusicTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E68AF7C1F6547610051684E /* AppleMusicTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3E68AF711F6547420051684E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E68AF741F6547420051684E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E68AF761F6547420051684E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E68AF7C1F6547610051684E /* AppleMusicTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMusicTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3E68AF6A1F6547420051684E /* AppDelegate.swift */,
 				3E68AF6C1F6547420051684E /* ViewController.swift */,
+				3E68AF7C1F6547610051684E /* AppleMusicTabBarController.swift */,
 				3E68AF6E1F6547420051684E /* Main.storyboard */,
 				3E68AF711F6547420051684E /* Assets.xcassets */,
 				3E68AF731F6547420051684E /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E68AF7D1F6547610051684E /* AppleMusicTabBarController.swift in Sources */,
 				3E68AF6D1F6547420051684E /* ViewController.swift in Sources */,
 				3E68AF6B1F6547420051684E /* AppDelegate.swift in Sources */,
 			);
