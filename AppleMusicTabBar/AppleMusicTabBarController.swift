@@ -19,21 +19,30 @@ class AppleMusicTabBarController: UITabBarController {
     var expandingViewTapGestureRecognizer: UITapGestureRecognizer!
     
     let expandingViewHeight: CGFloat = 50.0
+    var expanded = false
+    
+    var expandedViewHeightConstraint: NSLayoutConstraint!
+    
+    var tabBarOrigin: CGFloat!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.addSubview(expandingView)
+        tabBarOrigin = self.tabBar.frame.origin.y
         
-        expandingView.backgroundColor = UIColor.black
+        view.addSubview(expandingView)
+        expandingView.backgroundColor = UIColor.darkGray
         
         expandingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         view.trailingAnchor.constraint(equalTo: expandingView.trailingAnchor).isActive = true
-        expandingView.heightAnchor.constraint(equalToConstant: expandingViewHeight).isActive = true
         expandingView.bottomAnchor.constraint(equalTo: tabBar.topAnchor).isActive = true
         
+        expandedViewHeightConstraint = expandingView.heightAnchor.constraint(equalToConstant: expandingViewHeight)
+        expandedViewHeightConstraint.isActive = true
+        
         expandingViewTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleExpandingViewTap(gestureRecognizer:)))
+        expandingView.addGestureRecognizer(expandingViewTapGestureRecognizer)
         
     }
 
@@ -50,8 +59,30 @@ class AppleMusicTabBarController: UITabBarController {
         
     }
     
+    func expandExpandingView() {
+        
+    }
+    
+    func collapseExpandingView() {
+        
+    }
+    
     func handleExpandingViewTap(gestureRecognizer: UITapGestureRecognizer) {
         
+        if !expanded {
+            expandedViewHeightConstraint.constant = view.frame.size.height - 25
+            tabBar.frame = CGRect(x: tabBar.frame.origin.x, y: tabBar.frame.origin.y + tabBar.frame.size.height, width: tabBar.frame.size.width, height: tabBar.frame.size.height)
+        } else {
+            expandedViewHeightConstraint.constant = expandingViewHeight
+            tabBar.frame = CGRect(x: tabBar.frame.origin.x, y: tabBar.frame.origin.y - tabBar.frame.size.height, width: tabBar.frame.size.width, height: tabBar.frame.size.height)
+        }
+        
+        expanded = !expanded
+        tabBar.isHidden = !tabBar.isHidden
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
 
     /*
